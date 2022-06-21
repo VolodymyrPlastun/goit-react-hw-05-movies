@@ -1,0 +1,66 @@
+.arrowLinkBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: blueviolet;
+    
+}
+
+.arrowLink {
+    margin-right: 10px;
+}
+
+.container {
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+.poster {
+        border: 1px solid grey;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #444;
+}
+
+.list {
+    padding: 15px;
+        border: 1px solid grey;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #444;
+}
+
+.movieDetailItem:not(:last-child) {
+margin-bottom: 15px;
+}
+
+.movieDetailsTitle {
+    margin-bottom: 15px;
+}
+
+.genreBox {
+    display: flex;
+}
+
+.movieInfoBox {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: 15px;
+}
+
+.movieInfo {
+    margin-bottom: 20px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.movieInfoLink:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.routeLink {
+     color: blueviolet;
+}
+
+.routeLinkActive {
+    color: tomato;
+}

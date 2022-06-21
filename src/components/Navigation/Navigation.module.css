@@ -1,0 +1,18 @@
+.link {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px;
+    color: black;
+}
+
+.active {
+   composes: link;
+    color: tomato;
+}
+
+.nav {
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
