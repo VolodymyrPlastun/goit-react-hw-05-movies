@@ -7,10 +7,13 @@
     margin-bottom: 15px;
 }
 
-.item:not(:last-child) {
-    padding: 15px;
-margin-bottom: 15px;
+.item {
+padding: 15px;
 border: 1px solid grey;
     border-radius: 10px;
     box-shadow: 0 0 10px #444;
+}
+
+.item:not(:last-child) {  
+margin-bottom: 15px;
 }

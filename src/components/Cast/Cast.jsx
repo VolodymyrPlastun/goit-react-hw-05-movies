@@ -5,8 +5,7 @@ import { fetchActorsDetails } from '../Services/Services';
 import s from './Cast.module.css';
 
 export default function Cast() {
-    const { movieId } = useParams();
-
+const { movieId } = useParams();
 const [cast, setCast] = useState(null);
     
     useEffect(() => {

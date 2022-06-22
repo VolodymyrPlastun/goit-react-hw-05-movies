@@ -7,10 +7,10 @@ import SearchForm from "../SearchForm";
 import s from '../HomePage/HomePage.module.css';
 
 export default function MoviesPage() {
-    const [movieName, setMovieName] = useState('');
+    // const [movieName, setMovieName] = useState('');
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+    // const [error, setError] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
     const location = useLocation();
     const currentItem = searchParams.get('query');
@@ -36,7 +36,7 @@ export default function MoviesPage() {
    
     const formSubmitSearch = (movieName) => {
         setSearchParams({query: movieName })
-        setMovieName(movieName);
+        // setMovieName(movieName);
         searchMovies(movieName);
     }
     useEffect(() => {
@@ -49,7 +49,7 @@ export default function MoviesPage() {
         <div>
        <SearchForm onSubmit={formSubmitSearch}/>
         {loading && <Loader/>}
-           {!error &&  <ol className={s.list}>
+           {movies &&  <ol className={s.list}>
                 {movies.map((movie => <li className={s.item} key={movie.id}>
                     <Link className={s.link} to={`/movies/${movie.id}`} state={{from: location}}>{movie.title}</Link>
                 </li>))}
