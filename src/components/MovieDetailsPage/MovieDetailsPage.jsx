@@ -11,6 +11,7 @@ export default function MovieDetails() {
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(false);
     const location = useLocation();
+    const goBackURL = location?.state?.from ?? '/';
     
     useEffect(() => {
         async function fetchMovie() {
@@ -34,7 +35,7 @@ export default function MovieDetails() {
             {loading && <Loader />}
             <div className={s.arrowLinkBox}>
                     <FaArrowAltCircleLeft className={s.arrowLink} />
-                    <Link  to={location?.state?.from ?? '/'}> Go back</Link>
+                    <Link  to={goBackURL}> Go back</Link>
                     </div>
             {movie && <div>
                 
@@ -62,8 +63,8 @@ export default function MovieDetails() {
             <div className={s.movieInfoBox}>
                 <p className={s.movieInfo}>Additional information</p>
                 <ul>
-                   <li className={s.movieInfoLink}><NavLink className={({isActive}) => isActive ? s.routeLinkActive : s.routeLink} to={`/movies/${movie.id}/cast`}>Cast</NavLink></li>
-                    <li className={s.movieInfoLink}><NavLink className={({isActive}) => isActive ? s.routeLinkActive : s.routeLink} to={`/movies/${movie.id}/reviews`}>Reviews</NavLink></li>
+                   <li className={s.movieInfoLink}><NavLink className={({isActive}) => isActive ? s.routeLinkActive : s.routeLink} to={`/movies/${movie.id}/cast`} state={{from: goBackURL}}>Cast</NavLink></li>
+                    <li className={s.movieInfoLink}><NavLink className={({isActive}) => isActive ? s.routeLinkActive : s.routeLink} to={`/movies/${movie.id}/reviews`} state={{from: goBackURL}}>Reviews</NavLink></li>
                 </ul>
                     </div>
             </div>}
