@@ -28,7 +28,6 @@ export default function MovieDetails() {
     }, [movieId])
 
     const defaultPoster = `https://i.pinimg.com/200x/e4/71/1e/e4711e46bea5264eaab661d643285ff6.jpg`;
-
     return (
         
         <div>
@@ -44,11 +43,13 @@ export default function MovieDetails() {
                 />
                 <ul className={s.list}><li className={s.movieDetailItem}>
                         <h2 className={s.movieDetailsTitle}>{movie.title}</h2>
-                <p>Rating: {movie.vote_average}</p>
+                        
+                <p>Rating: {movie.vote_average ? movie.vote_average : 'No rating for that movie'}</p>
             </li>
                 <li className={s.movieDetailItem}>
-                    <h3 className={s.movieDetailsTitle}>Overview</h3>
-                    <p>{movie.overview}</p>
+                            <h3 className={s.movieDetailsTitle}>Overview</h3>
+                            {movie.overview ? <p>{movie.overview}</p> : <p>There is no overview for that movie</p>}
+                    
             </li>
                 <li className={s.movieDetailItem}>
                         <h4 className={s.movieDetailsTitle}>Genres</h4>
